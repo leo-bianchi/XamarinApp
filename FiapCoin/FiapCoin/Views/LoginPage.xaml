@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FiapCoin.ViewModel"
+             x:Class="FiapCoin.Views.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel>
+        </vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="64">
+            <Image Source="icon.png"></Image>
+            
+            <Entry Placeholder="Usuário" 
+                   x:Name="EntryUsuario" 
+                   Text="{Binding Usuario}"/>
+            <Entry Placeholder="Senha" 
+                   x:Name="EntrySenha" 
+                   Text="{Binding Senha}" IsPassword="True"/>
+            <Button 
+                Text="Entrar" 
+                Command="{Binding BotaoEntrarCommand}"/>
+
+            <Button
+                Text="Sair"
+                Command="{Binding BotaoSairCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
